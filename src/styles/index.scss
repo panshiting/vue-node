@@ -1,0 +1,46 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './sidebar.scss';
+@import './base.scss';
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+}
+
+ul,ol,li {
+  list-style: none;
+}
+a {
+  color: #409EFF;
+  text-decoration: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// 滚动条样式
+.app-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 4px;
+  }
+}
+
+
+
