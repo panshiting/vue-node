@@ -1,40 +1,45 @@
 <template>
   <div class="contain">
     <div class="slider">
-      <el-menu router default-active="/" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-        <!--<el-submenu index="1">-->
-          <!--<i class="el-icon-location"></i>-->
-          <!--<span slot="title">首页</span>-->
-          <!--<el-menu-item index="1-1">选项1</el-menu-item>-->
-          <!--<el-menu-item index="1-2">选项2</el-menu-item>-->
-        <!--</el-submenu>-->
-        <el-menu-item index="/">
+      <el-menu
+        router
+        :default-active="key"
+        class="el-menu-vertical-demo"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b">
+        <el-menu-item index="/" key="/">
           <i class="el-icon-location"></i>
           <span slot="title">首页</span>
         </el-menu-item>
-        <el-menu-item :index="`/list`">
+        <el-menu-item :index="`/list`" key="/list">
           <i class="el-icon-menu"></i>
           <span slot="title">列表</span>
         </el-menu-item>
-        <el-menu-item index="/test1">
+        <el-menu-item index="/test1" key="/test1">
           <i class="el-icon-document"></i>
           <span slot="title">导航三</span>
         </el-menu-item>
-        <el-menu-item index="/test2">
+        <el-menu-item index="/test2" key="/test2">
           <i class="el-icon-setting"></i>
           <span slot="title">导航四</span>
         </el-menu-item>
       </el-menu>
     </div>
     <div class="main-container">
-      <router-view></router-view>
+      <router-view :key="key"></router-view>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'index',
+  computed: {
+    key () {
+      return this.$route.fullPath
+    }
+  }
 }
 </script>
 

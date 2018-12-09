@@ -20,6 +20,22 @@ export const constantRouterMap = [
         }
       },
       {
+        path: '/list/add',
+        component: () => import('@/views/tableList/TableAdd'),
+        name: 'TableAdd',
+        meta: {
+          title: '新增'
+        }
+      },
+      {
+        path: '/list/edit/:id',
+        component: () => import('@/views/tableList/TableAdd'),
+        name: 'TableAdd',
+        meta: {
+          title: '编辑'
+        }
+      },
+      {
         path: '/test1',
         component: () => import('@/views/test/test1'),
         name: 'Test1',
